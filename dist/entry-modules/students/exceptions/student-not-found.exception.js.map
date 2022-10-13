@@ -1,0 +1,1 @@
+{"version":3,"file":"student-not-found.exception.js","sourceRoot":"","sources":["../../../../src/entry-modules/students/exceptions/student-not-found.exception.ts"],"names":[],"mappings":";;;AAAA,2CAAmD;AAEnD,MAAa,wBAAyB,SAAQ,0BAAiB;IAC3D,YAAY,UAAkB;QAC1B,KAAK,CAAC,UAAU,CAAC,CAAC;QAElB,IAAI,CAAC,IAAI,GAAG,wBAAwB,CAAC,IAAI,CAAC;IAC9C,CAAC;CACJ;AAND,4DAMC"}

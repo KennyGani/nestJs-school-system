@@ -1,0 +1,354 @@
+{
+  "openapi": "3.0.0",
+  "paths": {
+    "/student/{studentKey}": {
+      "get": {
+        "operationId": "StudentController_getStudent",
+        "parameters": [
+          {
+            "name": "studentKey",
+            "required": true,
+            "in": "path",
+            "schema": { "type": "string" }
+          }
+        ],
+        "responses": { "200": { "description": "" } },
+        "tags": ["student"]
+      }
+    },
+    "/teacher/{teacherKey}": {
+      "get": {
+        "operationId": "TeacherController_getTeacher",
+        "parameters": [
+          {
+            "name": "teacherKey",
+            "required": true,
+            "in": "path",
+            "schema": { "type": "string" }
+          }
+        ],
+        "responses": { "200": { "description": "" } },
+        "tags": ["teacher"]
+      }
+    },
+    "/student-class/{studentKey}": {
+      "get": {
+        "operationId": "StudentClassController_getStudentClass",
+        "parameters": [
+          {
+            "name": "studentKey",
+            "required": true,
+            "in": "path",
+            "schema": { "type": "string" }
+          }
+        ],
+        "responses": { "200": { "description": "" } },
+        "tags": ["student-class"]
+      }
+    },
+    "/student-class/request-class-change": {
+      "post": {
+        "operationId": "StudentClassController_requestChangeClass",
+        "parameters": [],
+        "responses": { "201": { "description": "" } },
+        "tags": ["student-class"]
+      }
+    },
+    "/homeroom-teacher/{teacherKey}/getClass": {
+      "get": {
+        "operationId": "HomeroomTeacherController_getClass",
+        "parameters": [
+          {
+            "name": "teacherKey",
+            "required": true,
+            "in": "path",
+            "schema": { "type": "string" }
+          }
+        ],
+        "responses": { "200": { "description": "" } },
+        "tags": ["homeroom-teacher"]
+      }
+    },
+    "/homeroom-teacher/request-class-change": {
+      "post": {
+        "operationId": "HomeroomTeacherController_requestClassChange",
+        "parameters": [],
+        "responses": { "201": { "description": "" } },
+        "tags": ["homeroom-teacher"]
+      }
+    },
+    "/homeroom-teacher/request-change-teacher": {
+      "post": {
+        "operationId": "HomeroomTeacherController_requestChangeTeacher",
+        "parameters": [],
+        "responses": { "201": { "description": "" } },
+        "tags": ["homeroom-teacher"]
+      }
+    },
+    "/student-management": {
+      "post": {
+        "operationId": "StudentManagementController_createStudent",
+        "parameters": [],
+        "responses": { "201": { "description": "" } },
+        "tags": ["student-management"]
+      },
+      "get": {
+        "operationId": "StudentManagementController_getAllStudent",
+        "parameters": [],
+        "responses": { "200": { "description": "" } },
+        "tags": ["student-management"]
+      }
+    },
+    "/student-management/{studentId}": {
+      "put": {
+        "operationId": "StudentManagementController_updateStudent",
+        "parameters": [
+          {
+            "name": "studentId",
+            "required": true,
+            "in": "path",
+            "schema": { "type": "string" }
+          }
+        ],
+        "responses": { "200": { "description": "" } },
+        "tags": ["student-management"]
+      },
+      "get": {
+        "operationId": "StudentManagementController_getStudentWithId",
+        "parameters": [
+          {
+            "name": "studentId",
+            "required": true,
+            "in": "path",
+            "schema": { "type": "string" }
+          }
+        ],
+        "responses": { "200": { "description": "" } },
+        "tags": ["student-management"]
+      },
+      "delete": {
+        "operationId": "StudentManagementController_deleteStudentWithId",
+        "parameters": [
+          {
+            "name": "studentId",
+            "required": true,
+            "in": "path",
+            "schema": { "type": "string" }
+          }
+        ],
+        "responses": { "200": { "description": "" } },
+        "tags": ["student-management"]
+      }
+    },
+    "/teacher-management": {
+      "post": {
+        "operationId": "TeacherManagementController_createTeacher",
+        "parameters": [],
+        "responses": { "201": { "description": "" } },
+        "tags": ["teacher-management"]
+      },
+      "get": {
+        "operationId": "TeacherManagementController_getAllTeacher",
+        "parameters": [],
+        "responses": { "200": { "description": "" } },
+        "tags": ["teacher-management"]
+      }
+    },
+    "/teacher-management/{teacherId}": {
+      "put": {
+        "operationId": "TeacherManagementController_updateTeacher",
+        "parameters": [
+          {
+            "name": "teacherId",
+            "required": true,
+            "in": "path",
+            "schema": { "type": "string" }
+          }
+        ],
+        "responses": { "200": { "description": "" } },
+        "tags": ["teacher-management"]
+      },
+      "get": {
+        "operationId": "TeacherManagementController_getTeacherWithId",
+        "parameters": [
+          {
+            "name": "teacherId",
+            "required": true,
+            "in": "path",
+            "schema": { "type": "string" }
+          }
+        ],
+        "responses": { "200": { "description": "" } },
+        "tags": ["teacher-management"]
+      },
+      "delete": {
+        "operationId": "TeacherManagementController_deleteTeacherWithId",
+        "parameters": [
+          {
+            "name": "teacherId",
+            "required": true,
+            "in": "path",
+            "schema": { "type": "string" }
+          }
+        ],
+        "responses": { "200": { "description": "" } },
+        "tags": ["teacher-management"]
+      }
+    },
+    "/class-management": {
+      "post": {
+        "operationId": "ClassManagementController_createClass",
+        "parameters": [],
+        "responses": { "201": { "description": "" } },
+        "tags": ["class-management"]
+      },
+      "get": {
+        "operationId": "ClassManagementController_getAllClass",
+        "parameters": [],
+        "responses": { "200": { "description": "" } },
+        "tags": ["class-management"]
+      }
+    },
+    "/class-management/{classId}": {
+      "put": {
+        "operationId": "ClassManagementController_updateClass",
+        "parameters": [
+          {
+            "name": "classId",
+            "required": true,
+            "in": "path",
+            "schema": { "type": "string" }
+          }
+        ],
+        "responses": { "200": { "description": "" } },
+        "tags": ["class-management"]
+      },
+      "get": {
+        "operationId": "ClassManagementController_getClassWithId",
+        "parameters": [
+          {
+            "name": "classId",
+            "required": true,
+            "in": "path",
+            "schema": { "type": "string" }
+          }
+        ],
+        "responses": { "200": { "description": "" } },
+        "tags": ["class-management"]
+      },
+      "delete": {
+        "operationId": "ClassManagementController_deleteClassWithId",
+        "parameters": [
+          {
+            "name": "classId",
+            "required": true,
+            "in": "path",
+            "schema": { "type": "string" }
+          }
+        ],
+        "responses": { "200": { "description": "" } },
+        "tags": ["class-management"]
+      }
+    },
+    "/homeroom-teacher-management/assign-teacher": {
+      "post": {
+        "operationId": "HomeroomTeacherManagementController_assignStudentToClass",
+        "parameters": [],
+        "responses": { "201": { "description": "" } },
+        "tags": ["homeroom-teacher-management"]
+      }
+    },
+    "/homeroom-teacher-management/?": {
+      "get": {
+        "operationId": "HomeroomTeacherManagementController_getHomeroomTeacherWithClassKey",
+        "parameters": [
+          {
+            "name": "classKey",
+            "required": true,
+            "in": "query",
+            "schema": { "type": "string" }
+          }
+        ],
+        "responses": { "200": { "description": "" } },
+        "tags": ["homeroom-teacher-management"]
+      }
+    },
+    "/homeroom-teacher-management/{teacherKey}/getClass": {
+      "get": {
+        "operationId": "HomeroomTeacherManagementController_getClassWithTeacherKey",
+        "parameters": [
+          {
+            "name": "teacherKey",
+            "required": true,
+            "in": "path",
+            "schema": { "type": "string" }
+          }
+        ],
+        "responses": { "200": { "description": "" } },
+        "tags": ["homeroom-teacher-management"]
+      }
+    },
+    "/student-class-management/assign-student": {
+      "post": {
+        "operationId": "StudentClassManagementController_assignStudentToClass",
+        "parameters": [],
+        "responses": { "201": { "description": "" } },
+        "tags": ["student-class-management"]
+      }
+    },
+    "/student-class-management/getAllStudents?": {
+      "get": {
+        "operationId": "StudentClassManagementController_getAllStudentInClassWithClassKey",
+        "parameters": [
+          {
+            "name": "classKey",
+            "required": true,
+            "in": "query",
+            "schema": { "type": "string" }
+          }
+        ],
+        "responses": { "200": { "description": "" } },
+        "tags": ["student-class-management"]
+      }
+    },
+    "/student-class-management/{studentKey}": {
+      "get": {
+        "operationId": "StudentClassManagementController_getStudentClassWithStudentKey",
+        "parameters": [
+          {
+            "name": "studentKey",
+            "required": true,
+            "in": "path",
+            "schema": { "type": "string" }
+          }
+        ],
+        "responses": { "200": { "description": "" } },
+        "tags": ["student-class-management"]
+      }
+    },
+    "/class/{classKey}": {
+      "get": {
+        "operationId": "ClassController_getClass",
+        "parameters": [
+          {
+            "name": "classKey",
+            "required": true,
+            "in": "path",
+            "schema": { "type": "string" }
+          }
+        ],
+        "responses": { "200": { "description": "" } },
+        "tags": ["class"]
+      }
+    }
+  },
+  "info": {
+    "title": "school",
+    "description": "The school API",
+    "version": "1.0.0",
+    "contact": {}
+  },
+  "tags": [],
+  "servers": [],
+  "components": { "schemas": {} }
+}

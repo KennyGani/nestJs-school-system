@@ -1,0 +1,79 @@
+"use strict";
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+var __param = (this && this.__param) || function (paramIndex, decorator) {
+    return function (target, key) { decorator(target, key, paramIndex); }
+};
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.StudentController = void 0;
+const common_1 = require("@nestjs/common");
+const swagger_1 = require("@nestjs/swagger");
+const dtos_1 = require("./dtos");
+const services_1 = require("./services");
+let StudentController = class StudentController {
+    constructor(studentService) {
+        this.studentService = studentService;
+    }
+    async getAllStudentsForClass(dto) {
+        const students = await this.studentService.getAllStudentsForClass(dto.classKey.trimStart().trimEnd().toLowerCase());
+        return students.map((student) => ({
+            firstName: student.firstName,
+            lastName: student.lastName,
+            address: student.address,
+            dob: student.dob,
+            email: student.email,
+            gender: student.gender,
+            key: student.key,
+            classKey: student.classKey,
+        }));
+    }
+    async getStudent(studentKey) {
+        const student = await this.studentService.getStudentByKey(studentKey);
+        return {
+            firstName: student.firstName,
+            lastName: student.lastName,
+            address: student.address,
+            dob: student.dob,
+            email: student.email,
+            gender: student.gender,
+            key: student.key,
+            classKey: student.classKey,
+        };
+    }
+};
+__decorate([
+    (0, common_1.Get)('/'),
+    (0, common_1.HttpCode)(200),
+    (0, swagger_1.ApiOkResponse)({ type: dtos_1.StudentDtoOutput }),
+    (0, swagger_1.ApiNotFoundResponse)(),
+    (0, swagger_1.ApiBadRequestResponse)(),
+    __param(0, (0, common_1.Query)()),
+    __metadata("design:type", Function),
+    __metadata("design:paramtypes", [dtos_1.AllStudentDtoInput]),
+    __metadata("design:returntype", Promise)
+], StudentController.prototype, "getAllStudentsForClass", null);
+__decorate([
+    (0, common_1.Get)('/:studentKey'),
+    (0, common_1.HttpCode)(200),
+    (0, swagger_1.ApiOkResponse)({ type: dtos_1.StudentDtoOutput }),
+    (0, swagger_1.ApiNotFoundResponse)(),
+    (0, swagger_1.ApiBadRequestResponse)(),
+    __param(0, (0, common_1.Param)('studentKey')),
+    __metadata("design:type", Function),
+    __metadata("design:paramtypes", [String]),
+    __metadata("design:returntype", Promise)
+], StudentController.prototype, "getStudent", null);
+StudentController = __decorate([
+    (0, swagger_1.ApiTags)('student'),
+    (0, common_1.Controller)('student'),
+    __metadata("design:paramtypes", [services_1.StudentService])
+], StudentController);
+exports.StudentController = StudentController;
+//# sourceMappingURL=student.controller.js.map
